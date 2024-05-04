@@ -1,4 +1,3 @@
-# write your code here
 # This is the main function of the Bill Splitter program.
 def main():
     # Prompt the user for the number of friends joining the dinner, including the user.
@@ -16,7 +15,18 @@ def main():
             name = input()  # Capture each friend's name.
             dict_list[name] = 0  # Initialize their bill share to 0 in the dictionary.
 
-        # Print the dictionary containing friends' names with their initial bill share set to 0.
+        # Prompt for the total bill value.
+        print('Enter the total bill value:')
+        total_bill = float(input())  # Capture the total bill value as a float.
+
+        # Calculate the split amount and round it to two decimal places.
+        split_amount = round(total_bill / how_many, 2)
+
+        # Update the dictionary with the split values.
+        for name in dict_list:
+            dict_list[name] = split_amount  # Assign the split amount to each friend.
+
+        # Print the updated dictionary.
         print(dict_list)
 
 

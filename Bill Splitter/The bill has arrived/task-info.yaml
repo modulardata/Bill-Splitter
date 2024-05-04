@@ -106,8 +106,9 @@ files:
       if __name__ == '__main__':    BillSplitterTest().run_tests()
     learner_created: false
 feedback_link: https://hyperskill.org/learn/step/12899#comment
-status: Failed
+status: Solved
 feedback:
-  message: "Wrong answer in test #1"
-  time: "Sat, 04 May 2024 10:44:22 UTC"
+  message: Well done! You've finished the project. Select a new project on <a href="https://hyperskill.org/projects">Hyperskill</a>
+    to continue learning.
+  time: "Sat, 04 May 2024 11:00:05 UTC"
 record: 1
