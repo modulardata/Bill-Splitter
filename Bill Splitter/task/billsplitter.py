@@ -1,34 +1,48 @@
-# This is the main function of the Bill Splitter program.
-def main():
-    # Prompt the user for the number of friends joining the dinner, including the user.
-    print('Enter the number of friends joining (including you):')
-    how_many = int(input())  # Capture the number of friends as an integer.
-    dict_list = {}  # Initialize an empty dictionary to store friends' names and their bill shares.
+import random
 
-    # Check if the number of friends is less than 1 (invalid input).
-    if how_many < 1:
-        print('No one is joining for the party')  # Print a message for invalid input.
+print('Enter the number of friends joining (including you):')
+how_many = int(input())
+dict_list = {}
+
+if how_many < 1:
+    print('No one is joining for the party')
+else:
+    print('Enter the name of every friend (including you), each on a new line:')
+    for _ in range(how_many):
+        name = input()
+        dict_list[name] = 0
+
+    print('Enter the total bill value:')
+    total_bill = float(input())
+
+    # Ask the user if they want to use the "Who is lucky?" feature
+    print('Do you want to use the "Who is lucky?" feature? Write Yes/No:')
+    use_lucky_feature = input()
+
+    if use_lucky_feature.lower() == 'yes':
+        lucky_one = random.choice(list(dict_list.keys()))
+        print(f'{lucky_one} is the lucky one!')
+
+        # Calculate the split amount for n-1 people
+        if how_many > 1:
+            split_amount = round(total_bill / (how_many - 1), 2)
+        else:
+            split_amount = 0
+
+        # Update the dictionary with the split values and 0 for the lucky person
+        for name in dict_list:
+            if name == lucky_one:
+                dict_list[name] = 0
+            else:
+                dict_list[name] = split_amount
     else:
-        # Prompt for the names of each friend joining the dinner.
-        print('Enter the name of every friend (including you), each on a new line:')
-        for _ in range(how_many):
-            name = input()  # Capture each friend's name.
-            dict_list[name] = 0  # Initialize their bill share to 0 in the dictionary.
-
-        # Prompt for the total bill value.
-        print('Enter the total bill value:')
-        total_bill = float(input())  # Capture the total bill value as a float.
-
-        # Calculate the split amount and round it to two decimal places.
+        print('No one is going to be lucky')
+        # Calculate the split amount and round it to two decimal places
         split_amount = round(total_bill / how_many, 2)
 
-        # Update the dictionary with the split values.
+        # Update the dictionary with the split values
         for name in dict_list:
-            dict_list[name] = split_amount  # Assign the split amount to each friend.
+            dict_list[name] = split_amount
 
-        # Print the updated dictionary.
-        print(dict_list)
-
-
-if __name__ == '__main__':
-    main()
+    # Print the updated dictionary
+    print(dict_list)

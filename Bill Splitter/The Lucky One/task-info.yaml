@@ -90,6 +90,7 @@ files:
 feedback_link: https://hyperskill.org/learn/step/12900#comment
 status: Solved
 feedback:
-  message: Congratulations!
-  time: "Sat, 04 May 2024 10:44:26 UTC"
+  message: Well done! You've finished the project. Select a new project on <a href="https://hyperskill.org/projects">Hyperskill</a>
+    to continue learning.
+  time: "Sat, 04 May 2024 11:01:32 UTC"
 record: 2
