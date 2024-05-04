@@ -88,8 +88,8 @@ files:
       if __name__ == '__main__':    BillSplitterTest().run_tests()
     learner_created: false
 feedback_link: https://hyperskill.org/learn/step/12898#comment
-status: Failed
+status: Solved
 feedback:
-  message: "Wrong answer in test #1"
-  time: "Sat, 04 May 2024 10:35:33 UTC"
+  message: Congratulations!
+  time: "Sat, 04 May 2024 10:54:30 UTC"
 record: 1
